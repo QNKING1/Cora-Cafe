@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#140E0B">
+  <meta name="description" content="Cora Cafe — considered coffee, seasonal plates, and a quiet place to stay awhile.">
+  <title>Cora Cafe — Coffee & Ritual</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <link rel="stylesheet" href="styles.css?v=responsive-layout">
+</head>
+<body>
+  <nav class="pill-nav" aria-label="Primary navigation">
+    <a class="brand" href="#top" aria-label="Cora Cafe home">
+      <span class="brand-mark">C</span>
+      <span class="brand-name">CORA <small>CAFE</small></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="#craft">Our Craft</a>
+      <a href="#menu">Menu</a>
+      <a href="#atmosphere">Atmosphere</a>
+      <a href="#reserve">Reserve a Table</a>
+    </div>
+    <div class="nav-actions">
+      <a class="nav-order" href="#" data-whatsapp-general>Order</a>
+      <a class="nav-book" href="#reserve">Book Table</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" id="top" aria-label="Cora Cafe brewing experience">
+      <canvas id="brewCanvas"></canvas>
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <p class="eyebrow light"><span></span> Single origin. Slow moments.</p>
+        <h1>Coffee, made<br><em>with intention.</em></h1>
+        <p class="hero-copy">From the first grind to the final pour, every cup is shaped with care and time.</p>
+        <div class="hero-actions">
+          <a class="button button-light" href="#reserve">Reserve a Cozy Corner <span>↗</span></a>
+          <a class="text-link" href="#menu">Explore Menu <span>↓</span></a>
+        </div>
+      </div>
+      <div class="brew-status">
+        <span class="status-dot"></span>
+        <span id="brewStep">01 / Velvety Micro-Foam</span>
+      </div>
+      <div class="brew-progress" aria-label="Brew animation progress">
+        <span id="brewProgress"></span>
+      </div>
+    </section>
+
+    <section class="craft section" id="craft">
+      <div class="section-heading reveal">
+        <p class="eyebrow"><span></span> Our craft</p>
+        <h2>A slower kind<br>of <em>coffee ritual.</em></h2>
+      </div>
+      <div class="craft-grid">
+        <article class="story-card reveal">
+          <p class="card-kicker">The Cora story</p>
+          <p>We built Cora around a simple idea: good coffee should give you a reason to pause. Our beans are responsibly sourced, roasted in small batches, and served in a space made for unhurried conversation.</p>
+          <a class="inline-link" href="#atmosphere">Meet us at Cora <span>→</span></a>
+        </article>
+        <article class="highlight-card reveal">
+          <div class="metric"><strong>100%</strong><span>Single-origin Arabica</span></div>
+          <div class="metric"><strong>18</strong><span>Hour slow cold brew</span></div>
+          <div class="metric"><strong>4.9</strong><span>Neighborhood rating</span></div>
+        </article>
+        <article class="feature-card lounge reveal">
+          <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1200&q=85" alt="Warm cafe lounge seating">
+          <div class="feature-overlay">
+            <span>01</span>
+            <h3>Cozy lounge & work corners</h3>
+          </div>
+        </article>
+        <article class="feature-card bakery reveal">
+          <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=85" alt="Fresh pastries at the bakery">
+          <div class="feature-overlay">
+            <span>02</span>
+            <h3>Micro-bakery</h3>
+          </div>
+        </article>
+        <article class="roast-card reveal">
+          <div class="roast-head">
+            <p>Roast profile</p>
+            <span>Season / 04</span>
+          </div>
+          <div class="roast-list">
+            <div><span>Bright</span><i><b style="width:72%"></b></i></div>
+            <div><span>Floral</span><i><b style="width:58%"></b></i></div>
+            <div><span>Chocolate</span><i><b style="width:86%"></b></i></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="menu-section section" id="menu">
+      <div class="menu-heading reveal">
+        <div>
+          <p class="eyebrow"><span></span> From the menu</p>
+          <h2>Considered favorites.</h2>
+        </div>
+        <p>Made fresh, served simply, and always best enjoyed slowly.</p>
+      </div>
+      <div class="menu-tabs reveal" role="tablist" aria-label="Menu categories">
+        <button class="active" type="button" data-filter="all" role="tab" aria-selected="true">All Items</button>
+        <button type="button" data-filter="espresso" role="tab" aria-selected="false">Espresso Bar</button>
+        <button type="button" data-filter="cold" role="tab" aria-selected="false">Iced & Cold Brew</button>
+        <button type="button" data-filter="bakery" role="tab" aria-selected="false">Artisan Bakery</button>
+        <button type="button" data-filter="brunch" role="tab" aria-selected="false">All-Day Brunch</button>
+      </div>
+      <div class="menu-grid" id="menuGrid"></div>
+    </section>
+
+    <section class="atmosphere section" id="atmosphere">
+      <div class="section-heading reveal">
+        <p class="eyebrow"><span></span> The atmosphere</p>
+        <h2>Stay for the <em>feeling.</em></h2>
+      </div>
+      <div class="gallery reveal">
+        <figure><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=85" alt="Coffee being prepared"><figcaption><span>01</span> The pour</figcaption></figure>
+        <figure><img src="https://images.unsplash.com/photo-1511081692775-05d0f180a065?auto=format&fit=crop&w=800&q=85" alt="Fresh pastry and coffee"><figcaption><span>02</span> Fresh daily</figcaption></figure>
+        <figure><img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=85" alt="Warm cafe interior"><figcaption><span>03</span> Your corner</figcaption></figure>
+        <figure><img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=85" alt="Friends enjoying a cafe"><figcaption><span>04</span> Good company</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="reserve section" id="reserve">
+      <div class="reserve-intro reveal">
+        <p class="eyebrow light"><span></span> Your table awaits</p>
+        <h2>Make room for<br><em>the moment.</em></h2>
+        <p>Choose your favorite corner. We’ll keep the coffee warm.</p>
+      </div>
+      <form class="booking-form reveal" id="bookingForm">
+        <div class="form-row">
+          <label>Full Name <span>*</span><input type="text" name="fullName" required autocomplete="name" placeholder="Your name"></label>
+          <label>Phone / WhatsApp <span>*</span><input type="tel" name="phone" required autocomplete="tel" placeholder="+92 308 3455811"></label>
+        </div>
+        <div class="form-row">
+          <label>Customer Email<input type="email" name="email" autocomplete="email" placeholder="you@example.com"></label>
+          <label>Seating Preference
+            <select name="seating">
+              <option>Indoor Cozy Lounge</option>
+              <option>Work Corner (Power + Wi-Fi)</option>
+              <option>Outdoor Patio Terrace</option>
+              <option>Window Bar Seating</option>
+            </select>
+          </label>
+        </div>
+        <div class="form-row three">
+          <label>Date <span>*</span><input type="date" name="date" required></label>
+          <label>Time <span>*</span><input type="time" name="time" required></label>
+          <label>Guests <span>*</span><select name="guests" required><option value="">Select</option><option>1 guest</option><option>2 guests</option><option>3 guests</option><option>4 guests</option><option>5 guests</option><option>6+ guests</option></select></label>
+        </div>
+        <label>Optional Special Note<textarea name="note" rows="3" placeholder="Celebration, accessibility, or dietary needs"></textarea></label>
+        <div class="form-actions">
+          <button class="button button-light" type="button" id="emailBooking"><span class="button-label">Confirm & Email Owner</span><span>↗</span></button>
+          <button class="button button-outline" type="button" id="whatsappBooking">Book via WhatsApp <span>↗</span></button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand footer-brand" href="#top"><span class="brand-mark">C</span><span class="brand-name">CORA <small>CAFE</small></span></a>
+    <p>Good coffee. Quiet corners. A little time for yourself.</p>
+    <span>© <span id="year"></span> Cora Cafe</span>
+  </footer>
+
+  <div class="modal-backdrop" id="emailModal" aria-hidden="true">
+    <div class="email-modal" role="dialog" aria-modal="true" aria-labelledby="emailModalTitle">
+      <button class="modal-close" type="button" aria-label="Close preview">×</button>
+      <div class="gmail-bar">
+        <span class="gmail-logo">M</span>
+        <div><strong>New booking request</strong><small>Cora Cafe Reservations · Inbox</small></div>
+      </div>
+      <div class="email-body" id="emailPreview"></div>
+      <p class="demo-note">Demo preview only — in live deployment, this booking is configured to arrive directly in the owner’s real inbox.</p>
+      <button class="button button-dark modal-done" type="button">Done</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
